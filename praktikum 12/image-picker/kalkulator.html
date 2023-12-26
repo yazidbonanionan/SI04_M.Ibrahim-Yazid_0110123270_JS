@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <script>
+        function calculate() {
+            let angka1 = document.getElementById("angka1").value;
+            let angka2 = document.getElementById("angka2").value;
+            let operator = document.getElementById("operator").value;
+            
+            let hasil = 0;
+
+            switch (operator) {
+                case '+':
+                    hasil = parseFloat(angka1) + parseFloat(angka2);
+                    break;
+                case '-':
+                    hasil = parseFloat(angka1) - parseFloat(angka2);
+                    break;
+                case '*':
+                    hasil = parseFloat(angka1) * parseFloat(angka2);
+                    break;
+                case '/':
+                    hasil = parseFloat(angka1) / parseFloat(angka2);
+                    break;
+                default:
+                    document.getElementById("hasil").innerHTML = 'Operator tidak valid';
+                    return;
+            }
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    Masukkan Angka 1:
+    <input type="number" value="" id="angka1">
+
+    Pilih Operator:
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    Masukkan Angka 2:
+    <input type="number" value="" id="angka2">
+
+    <button onclick="calculate()">Hitung!</button>
+
+    <br>
+
+    <h2>Hasil</h2>
+    <span id="hasil"></span>
+    <hr>
+</body>
+</html>

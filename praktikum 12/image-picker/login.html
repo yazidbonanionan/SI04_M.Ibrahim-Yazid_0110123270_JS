@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input {
+            width: 200px;
+            height: 30px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sistem Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <br>
+
+        <button type="button" onclick="checkLogin()">Login</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkLogin() {
+            // Username dan Password yang diizinkan (contoh)
+            const allowedUsername = "user123";
+            const allowedPassword = "pass123";
+
+            // Mengambil nilai dari form
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            // Memeriksa apakah username dan password sesuai
+            if (enteredUsername === allowedUsername && enteredPassword === allowedPassword) {
+                document.getElementById("result").innerHTML = "Login berhasil!";
+            } else {
+                document.getElementById("result").innerHTML = "Username atau password salah.";
+            }
+        }
+    </script>
+</body>
+</html>
